@@ -28,8 +28,8 @@
         </div>
       </form>
     </main>
-    <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script> 
-    <script src="{{ asset('/js/app.js') }}"></script>   
+    <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
+    <script src="{{ asset('/js/app.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
       $("#newMessageForm").submit(function(event) {
@@ -48,7 +48,7 @@
       function postMessageToBackend(message) {
         $.post("messages", {
           "_token":"{{ csrf_token() }}",
-          "message": message 
+          "message": message
         }).fail(function() {
           alert("Error occurred during sending the data. Please retry again later.");
         })
